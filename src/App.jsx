@@ -1,9 +1,14 @@
 const Hello = (props) => {
   return (
     <div>
-      <p>Hello {props.name}, tämä on hellokomponentti</p>
+      <h1>
+        Hello {props.nimi}, olen {props.age} vuotta vanha
+      </h1>
     </div>
   );
+};
+const Footer = () => {
+  return <div>kokeilu</div>;
 };
 
 const App = () => {
@@ -11,16 +16,17 @@ const App = () => {
   const a = 10;
   const b = 20;
   console.log(now, a + b);
-  console.log("Tämä on tilanne komponentissa nyt:");
+  console.log("Tämä on tilanne komponentissa nyt:Hello");
 
   return (
     <div>
-      <Hello name="Stefan" />
-      <Hello name="Vadim" />
+      <Hello nimi="Stefan" age={32 + 22} />
+      <Hello nimi="Vadim" age={a} />
       <p>Hello world, it is {now.toString()}</p>
       <p>
         {a} plus {b} is {a + b}
       </p>
+      <Footer />
     </div>
   );
 };
